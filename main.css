@@ -30,7 +30,8 @@ body {
 #SelectionPanel {
     
     width: 35%;
-    height: 650px;
+    height: 100%;
+    max-height: 100%;
     overflow-y: scroll;
     float: left;
 }
@@ -57,4 +58,37 @@ body {
     height: 800px;
     width: 100%;
     background-color: blue;
+}
+
+.sectionTitle {
+    background-color: lightgrey;
+    height: 2em;
+}
+
+.sectionTitle > p {
+    padding: 0.5em 2em 0.5em 2em;
+    font-weight: bold;
+}
+
+.module {
+    background-color: white;
+}
+
+.module.selectedModule {
+    background-color: lightgreen;
+}
+
+div.credits {
+    color: red;
+    float: left;
+}
+
+div.term {
+    color: blue;
+    float: right;
+}
+
+button.viewModule {
+    float: center;
+    margin-left: 30px;
 }
