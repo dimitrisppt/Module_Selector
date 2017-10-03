@@ -1,0 +1,60 @@
+body {
+
+    margin: 0;
+    
+}
+
+#MainContainer {
+    
+    width: 100%
+    height: 100%;
+    margin: 0 20px 0 20px;
+    justify-content: center;
+}
+
+#Header {
+    
+    width: 100%;
+    height: 20%;
+    background-color: blanchedalmond;
+    margin-right: 0 auto;
+}
+
+#Content {
+    
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+#SelectionPanel {
+    
+    width: 35%;
+    height: 650px;
+    overflow-y: scroll;
+    float: left;
+}
+
+#InfoPanel {
+    
+    width: 65%;
+    height: 650px;
+    overflow-y: scroll;
+    background-color: grey;
+    position: relative;
+    float: right;
+}
+
+#Compulsory {
+    
+    height: 400px;
+    width: 100%;
+    background-color: green;
+}
+
+#Optional {
+    
+    height: 800px;
+    width: 100%;
+    background-color: blue;
+}
