@@ -10,6 +10,7 @@ body {
     height: 100%;
     margin: 0 20px 0 20px;
     justify-content: center;
+    
 }
 
 #Header {
@@ -22,6 +23,11 @@ body {
 
 #Content {
     
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items:stretch;
+    flex-wrap: wrap;
     width: 100%;
     height: 80%;
     margin: 0 auto;
@@ -29,8 +35,9 @@ body {
 
 #SelectionPanel {
     
-    width: 35%;
     height: 100%;
+    width: 35%;
+    flex-grow: 1;
     overflow-y: scroll;
     float: left;
 }
@@ -38,7 +45,7 @@ body {
 #InfoPanel {
     
     width: 65%;
-    height: 100%;
+    flex-grow: 2;
     overflow-y: scroll;
     background-color: grey;
     position: relative;
