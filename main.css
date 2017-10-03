@@ -74,6 +74,10 @@ body {
     background-color: white;
 }
 
+.module.selectedModule {
+    background-color: lightgreen;
+}
+
 div.credits {
     color: red;
     float: left;
