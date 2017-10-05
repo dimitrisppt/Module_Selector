@@ -1,8 +1,7 @@
-debugger;
 //*
 $(function() {
-    $('.viewModule').onClick(function() {
-        alert('Clicked!');
+    $('.selectModuleButton').on('click', function(e) {
+        var moduleId = e.target.getAttribute('module');
+        $('div.module#' + moduleId).toggleClass('selectedModule');
     });
 });//*/
-debugger;
