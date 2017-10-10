@@ -9,7 +9,8 @@ var template = '{{#moduleList}}\
 
 $(function() {
     $('#coreModuleList').append(Mustache.render(template, moduleData.core));
-    $('#optionalModuleList').html(Mustache.render(template, moduleData.optional));
+    $('#optionalModuleListTerm1').html(Mustache.render(template, moduleData.term1));
+    $('#optionalModuleListTerm2').html(Mustache.render(template, moduleData.term2));
     $('.selectModuleButton').on('click', function(e) {
         e.stopPropagation();
         var moduleId = e.target.getAttribute('module');
