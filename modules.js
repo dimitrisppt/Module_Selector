@@ -9,27 +9,40 @@ window.moduleData = {
                 id: "6CCSCOMP",
                 title: "6CCSCOMP Compulsory Module",
                 credits: 30,
-                term: "1st term",
                 selected: true
             }
         ],
-        isCore: true
+        isCore: true,
+        term: "Both terms"
     },
-    optional: {
+    term1: {
         moduleList: [
             {
                 id: "6CCSOPT",
                 title: "Optional module",
                 credits: 15,
-                term: "2nd term"
+                lecturer: "Mr John Doe",
+                assessment: "75% written examination, 25% coursework",
+                description: "This module is a module that teaches you things. It's very good at teaching you things. After taking this module you will know things, and it will be all thanks to this module."
             },
             {
                 id: "6CCSAI",
                 title: "6CCSAI Some Sort of AI Module",
                 credits: 15,
-                term: "1st term"
             }
         ],
-        isCore: false
+        isCore: false,
+        term: "1st term"
+    },
+    term2: {
+        moduleList: [
+            {
+                id: "6CCSTEMP",
+                title: "6CCSTEMP Temporary Placeholder Module",
+                credits: 15
+            }
+        ],
+        isCore: false,
+        term: "2nd term"
     }
 };
