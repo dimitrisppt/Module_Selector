@@ -9,27 +9,37 @@ window.moduleData = {
                 id: "6CCSCOMP",
                 title: "6CCSCOMP Compulsory Module",
                 credits: 30,
-                term: "1st term",
                 selected: true
             }
         ],
-        isCore: true
+        isCore: true,
+        term: "Both terms"
     },
-    optional: {
+    term1: {
         moduleList: [
             {
                 id: "6CCSOPT",
                 title: "Optional module",
                 credits: 15,
-                term: "2nd term"
             },
             {
                 id: "6CCSAI",
                 title: "6CCSAI Some Sort of AI Module",
                 credits: 15,
-                term: "1st term"
             }
         ],
-        isCore: false
+        isCore: false,
+        term: "1st term"
+    },
+    term2: {
+        moduleList: [
+            {
+                id: "6CCSTEMP",
+                title: "6CCSTEMP Temporary Placeholder Module",
+                credits: 15
+            }
+        ],
+        isCore: false,
+        term: "2nd term"
     }
 };
