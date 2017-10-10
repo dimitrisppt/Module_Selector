@@ -44,26 +44,31 @@ body {
 
 #InfoPanel {
     
-    width: 65%;
+    width: 60%;
     flex-grow: 2;
     overflow-y: scroll;
     background-color: grey;
     position: relative;
     float: right;
+    margin: 10px 0px 0px 10px;
+    padding: 10px;
 }
 
 #Compulsory {
     
     height: 400px;
-    width: 100%;
+    border: solid grey 3px;
     background-color: green;
+    margin-top: 10px;
+    
 }
 
 #Optional {
     
     height: 800px;
-    width: 100%;
     background-color: blue;
+    border: solid grey 3px;
+    margin-top: 10px;
 }
 
 .sectionTitle {
@@ -74,6 +79,8 @@ body {
 .sectionTitle > p {
     padding: 0.5em 2em 0.5em 2em;
     font-weight: bold;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
 }
 
 .module {
@@ -82,19 +89,24 @@ body {
 
 .module.selectedModule {
     background-color: lightgreen;
+
 }
 
 div.credits {
     color: red;
     float: left;
+    margin: 0px 5px;
 }
 
 div.term {
     color: blue;
     float: right;
+    margin: 0px 5px;
 }
 
 button.selectModuleButton {
+    position: relative;
+    margin: 0 auto;
     float: center;
-    margin-left: 30px;
+
 }
