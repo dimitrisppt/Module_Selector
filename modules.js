@@ -21,6 +21,9 @@ window.moduleData = {
                 id: "6CCSOPT",
                 title: "Optional module",
                 credits: 15,
+                lecturer: "Mr John Doe",
+                assessment: "75% written examination, 25% coursework",
+                description: "This module is a module that teaches you things. It's very good at teaching you things. After taking this module you will know things, and it will be all thanks to this module."
             },
             {
                 id: "6CCSAI",
