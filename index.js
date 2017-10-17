@@ -21,10 +21,20 @@ $(function() {
     $('.selectModuleButton').on('click', function(e) {
         e.stopPropagation();
         var moduleId = e.target.getAttribute('module');
+        var streams = [];
         $('div.module#' + moduleId).toggleClass('selectedModule');
         for (stream in streamData) {
+            for (mod of streamData[stream]) {
+                if (mod == moduleId) {
+                    streams.push(stream);
+                }
+            }
+        }
+        for (stream of streams) {
             console.log(stream);
-            console.log(streamData[stream]);
+            if ($('div.module#' + moduleId).hasClass('selectedModule')) {
+                $('#progress' + stream).attr('value', 50);
+            }
         }
     });
 
