@@ -28,10 +28,18 @@ $(function() {
     	//window.alert("Test");
     	var suggModules = window.streamData[e.currentTarget.getAttribute('id')];
     	console.log(suggModules);
-    	$('div.module#' + suggModules).toggleClass('selectedModule');
+    	
 
-    	//TODO 
-    })
+
+    	for (moduleId of suggModules) { 
+  
+    		$('div.module#' + moduleId).find("p").css("color", "red");
+    		
+    	}
+
+
+ 
+    });
 
 
     //*
