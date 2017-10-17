@@ -211,7 +211,7 @@ div.module {
 }
 
 /* Style the links inside the navigation bar */
-#stream a {
+#stream div {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -222,23 +222,18 @@ div.module {
 }
 
 /* Change the color of links on hover */
-#stream a:hover {
+#stream div:hover {
     background-color: #ddd;
     color: black;
 }
 
 /* Add a color to the active/current link */
-#stream a.active {
+#stream div.active {
     background-color: #4CAF50;
     color: white;
 }
 
-.progressbar {
-  background-color: #f3f3f3;
-  width: 0%;
-  height: 16px;
-  
-}
+
 
 
 
