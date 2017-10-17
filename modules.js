@@ -13,17 +13,42 @@ window.moduleData = {
             {
                 id: "6CCS3PRJ",
                 title: "6CCS3PRJ Individual Project",
+                term: "Full year",
                 credits: 30,
-
                 selected: true,
                 lecturer: " Dr Natalia Criado-Pacheco",
                 assessment: "100% final report. Attendance at an oral presentation is compulsory for passing the module",
-                description: "The project provides you with an opportunity to engage in a self-managed and detailed investigation of an aspect of computer science. A substantial piece of written work will be produced and a significant piece of software."
-            }
+                description: "The project provides you with an opportunity to engage in a self-managed and detailed investigation of an aspect of computer science. A substantial piece of written work will be produced and a significant piece of software.",
+                isManagement: false,
+            },
+            {
+                id: "6SSMN325",
+                title: "Business Strategy",
+                term: "1st term",
+                credits: 15,
+                selected: true,
+                lecturer: "",
+                assessment: "",
+                description: "",
+                isManagement: true,
+                
+            },
+            {
+                id: "6SSMN339",
+                title: "Human Resource Management",
+                term: "2nd term",
+                credits: 15,
+                selected: true,
+                lecturer: "",
+                assessment: "",
+                description: "",
+                isManagement: true,
+                
+            },
+            
         ],
         
         isCore: true,
-        term: "Both terms"
     },
     term1: {
         moduleList: [

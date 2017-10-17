@@ -1,5 +1,5 @@
 var template = '{{#moduleList}}\
-<div class="module {{#isCore}}selectedModule{{/isCore}}" id="{{id}}">\
+<div class="module {{#isCore}}selectedModule{{#isManagement}}Management{{/isManagement}}{{/isCore}}" id="{{id}}" {{#isManagement}}style="display: none{{/isManagement}}">\
     <div class="selectedModuleTitle">\
         <p>{{title}}</p>\
     </div>\

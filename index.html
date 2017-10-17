@@ -23,8 +23,14 @@
         <h1 id="HeaderTitle">Example Domain</h1>
         
         <div id="coursesSelection">
-            <a href="#cs">Bsc Computer Science</a>
-            <a href="#csM">Bsc Computer Science with Management</a>
+            <a href="#cs" onclick=" 
+                $('.module.selectedModuleManagement').hide();"
+            >Bsc Computer Science</a>
+            
+            <a href="#csM" onclick="
+                $('.module.selectedModuleManagement').show();"
+                                    
+            >Bsc Computer Science with Management</a>
         </div>
 
         <div id="stream">
