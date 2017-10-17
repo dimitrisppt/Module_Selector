@@ -1,5 +1,10 @@
-if (window.moduleData !== void 0) {
-    console.log("window.moduleData being overwritten; previous value is:\n", window.moduleData);
+if ($.isFunction(console.log)) {
+    if (window.moduleData !== void 0) {
+        console.log("window.moduleData being overwritten; previous value is:\n", window.moduleData);
+    }
+    if (window.streamData !== void 0) {
+        console.log("window.streamData being overwritten; previous value is:\n", window.streamData);
+    }
 }
 
 window.moduleData = {
