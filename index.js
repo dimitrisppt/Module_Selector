@@ -28,6 +28,15 @@ $(function() {
         }
     });
 
+    $(".Specifications").click(function(e) {
+    	//window.alert("Test");
+    	var suggModules = window.streamData[e.currentTarget.getAttribute('id')];
+    	console.log(suggModules);
+    	$('div.module#' + suggModules).toggleClass('selectedModule');
+
+    	//TODO 
+    })
+
     $('.module').on('click', function(e){
         e.stopPropagation();
         var moduleId = e.currentTarget.getAttribute('id');
@@ -61,4 +70,5 @@ $(function() {
             }
         }
     });
+
 });

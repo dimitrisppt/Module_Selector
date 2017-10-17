@@ -209,13 +209,13 @@ window.moduleData = {
 };
 
 window.streamData = {
-    "PCCS": [
+    "PCC": [
         "6CCS3PAL",
         "6CCS3CIS",
         "6CCS3CFL",
         "6CCS3OME"
     ],
-    "IS": [
+    "InSy": [
         "6CCS3INS",
         "6CCS3PAL",
         "6CCS3GRS",
@@ -224,7 +224,7 @@ window.streamData = {
         "6CCS3SAD",
         "6CCS3SIA"
     ],
-    "SE": [
+    "SEG": [
         "6CCS3SMT",
         "6CCS3PAL",
         "6CCS3DSM",
