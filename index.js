@@ -13,27 +13,31 @@ var template = '{{#moduleList}}\
 
 
 
-
 $(function() {
     $('#coreModuleList').append(Mustache.render(template, moduleData.core));
     $('#optionalModuleListTerm1').html(Mustache.render(template, moduleData.term1));
     $('#optionalModuleListTerm2').html(Mustache.render(template, moduleData.term2));
+
     $('.selectModuleButton').on('click', function(e) {
         e.stopPropagation();
         var moduleId = e.target.getAttribute('module');
         $('div.module#' + moduleId).toggleClass('selectedModule');
+        for (stream in streamData) {
+            console.log(stream);
+            console.log(streamData[stream]);
+        }
     });
-    //*
+
     $('.module').on('click', function(e){
         e.stopPropagation();
         var moduleId = e.currentTarget.getAttribute('id');
         var moduleArray;
         
-        if (e.currentTarget.parentElement.getAttribute('id') === 'coreModuleList'){
+        if (e.currentTarget.parentElement.getAttribute('id') === 'coreModuleList') {
             moduleArray = window.moduleData.core.moduleList;
-        }else if(e.currentTarget.parentElement.getAttribute('id') === 'optionalModuleListTerm1'){
+        } else if (e.currentTarget.parentElement.getAttribute('id') === 'optionalModuleListTerm1') {
             moduleArray = window.moduleData.term1.moduleList;
-        }else if(e.currentTarget.parentElement.getAttribute('id') === 'optionalModuleListTerm2'){
+        } else if (e.currentTarget.parentElement.getAttribute('id') === 'optionalModuleListTerm2') {
             moduleArray = window.moduleData.term2.moduleList;
         }
         
@@ -53,10 +57,8 @@ $(function() {
                 $('#moduleCredits').html('<b>Module Credits: </b>' + credits + "<br>");
                 $('#moduleLecturer').html('<b>Module Lecturer(s): </b>' + lecturer + "<br>");
                 $('#moduleAssessment').html('<b>Module Marking: </b>' + assessment + "<br>");
-                $('#moduleDescription').html('<b>Module Description: </b>' + desc + "<br>");//*/
+                $('#moduleDescription').html('<b>Module Description: </b>' + desc + "<br>");
             }
         }
-
-
     });
 });
