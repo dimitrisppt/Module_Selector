@@ -1,9 +1,13 @@
 var template = '{{#moduleList}}\
 <div class="module {{#isCore}}selectedModule{{/isCore}}" id="{{id}}">\
-    <p>{{title}}</p>\
-    <button class="selectModuleButton" module="{{id}}" {{#isCore}}disabled{{/isCore}}>Select module</button>\
-    <div class="credits">{{credits}}</div>\
-    <div class="term">{{term}}</div>\
+    <div class="selectedModuleTitle">\
+        <p>{{title}}</p>\
+    </div>\
+    <div class="selectedModulePanel">\
+        <div class="credits">{{credits}}</div>\
+        <button class="selectModuleButton" module="{{id}}" {{#isCore}}disabled{{/isCore}}>Select module</button>\
+        <div class="term">{{term}}</div>\
+    </div>\
 </div>\
 {{/moduleList}}';
 

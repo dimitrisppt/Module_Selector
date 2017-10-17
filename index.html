@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" type="text/css" href="./main.css">
 
     <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
@@ -18,39 +19,40 @@
 <body>
 <div id="MainContainer">
     <div id="Header">
-    <h1>Example Domain</h1>
-
-        <div class="coursesSelection" id="coursesSelection">
+        
+        <h1 id="HeaderTitle">Example Domain</h1>
+        
+        <div id="coursesSelection">
             <a href="#cs">Bsc Computer Science</a>
             <a href="#csM">Bsc Computer Science with Management</a>
         </div>
 
-        <div class="stream" id="stream">
+        <div id="stream">
             
                 
 
-                <a href="#stream">Internet Systems
+                <a href="">Internet Systems
                     <div class="progressbar">
                         <progress id="progressIS" value="0" max="100">
                         </progress>
                     </div>
                 </a>
 
-                <a href="#stream">Software Engineering
+                <a href="">Software Engineering
                     <div class="progressbar">
                         <progress id="progressSE" value="0" max="100">
                         </progress>
                     </div>
                 </a>
 
-                <a href="#stream">Artificial Intelligence
+                <a href="">Artificial Intelligence
                     <div class="progressbar">
                         <progress id="progressAI" value="0" max="100">
                         </progress>
                     </div>
                 </a>
 
-                <a href="#stream">Performance Critical Computing 
+                <a href="">Performance Critical Computing 
                     <div class="progressbar">
                         <progress id="progressPCC" value="0" max="100">
                         </progress>
@@ -59,10 +61,8 @@
             
 
         </div>
-
-       
-
     </div>
+    
     <div id="Content">
         <div id="SelectionPanel">
             
@@ -78,13 +78,13 @@
                 <div class="sectionTitle">
                     <p>Term 1</p>
                 </div>
-                <div id="optionalModuleListTerm1"></div>
+                <div id="optionalModuleListTerm1" class="optionalModuleList"></div>
             </div>
             <div class="optional">
                 <div class="sectionTitle">
                     <p>Term 2</p>
                 </div>
-                <div id="optionalModuleListTerm2"></div>
+                <div id="optionalModuleListTerm2" class="optionalModuleList"></div>
             </div>
         
         </div>
@@ -100,4 +100,5 @@
 </div>
 
 
-</body></html>
+</body>
+</html>

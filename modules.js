@@ -9,12 +9,14 @@ window.moduleData = {
                 id: "6CCS3PRJ",
                 title: "6CCS3PRJ Individual Project",
                 credits: 30,
+
                 selected: true,
                 lecturer: " Dr Natalia Criado-Pacheco",
                 assessment: "100% final report. Attendance at an oral presentation is compulsory for passing the module",
                 description: "The project provides you with an opportunity to engage in a self-managed and detailed investigation of an aspect of computer science. A substantial piece of written work will be produced and a significant piece of software."
             }
         ],
+        
         isCore: true,
         term: "Both terms"
     },
@@ -29,6 +31,7 @@ window.moduleData = {
                 description: "This module provides a critical introduction to theories and methods regarding multi-agent computer systems and their component agents, focussing particularly on mechanisms for coordination and agreement between self-interested agents."
             },
             {
+
                 id: "6CCS3CFL",
                 title: "6CCS3CFL Compiler and Formal Languages",
                 credits: 15,
