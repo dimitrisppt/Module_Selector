@@ -25,6 +25,7 @@ max-height: 150%;
     
     flex: 1;
     background-color: blanchedalmond;
+    width: 100%;
     margin-right: 0 auto;
 
 }
@@ -35,6 +36,7 @@ max-height: 150%;
     flex-direction: row;
     justify-content:flex-start;
     align-items:stretch;
+    width: 100%;
     margin: 0 auto;
 }
 
