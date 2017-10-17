@@ -1,5 +1,10 @@
-if (window.moduleData !== void 0) {
-    console.log("window.moduleData being overwritten; previous value is:\n", window.moduleData);
+if ($.isFunction(console.log)) {
+    if (window.moduleData !== void 0) {
+        console.log("window.moduleData being overwritten; previous value is:\n", window.moduleData);
+    }
+    if (window.streamData !== void 0) {
+        console.log("window.streamData being overwritten; previous value is:\n", window.streamData);
+    }
 }
 
 window.moduleData = {
@@ -202,3 +207,39 @@ window.moduleData = {
         term: "2nd term"
     }
 };
+
+window.streamData = {
+    "PCCS": [
+        "6CCS3PAL",
+        "6CCS3CIS",
+        "6CCS3CFL",
+        "6CCS3OME"
+    ],
+    "IS": [
+        "6CCS3INS",
+        "6CCS3PAL",
+        "6CCS3GRS",
+        "6CCS3CIS",
+        "6CCS3NSE",
+        "6CCS3SAD",
+        "6CCS3SIA"
+    ],
+    "SE": [
+        "6CCS3SMT",
+        "6CCS3PAL",
+        "6CCS3DSM",
+        "6CCS3SAD",
+        "6CCS3SIA",
+        "6CCS3VER",
+        "6CCS3CFL",
+        "6CCS3HCI"
+    ],
+    "AI": [
+        "6CCS3AIN",
+        "6CCS3AIP",
+        "6CCS3OME",
+        "6CCS3AMS",
+        "6CCS3COV",
+        "6CCS3PRE"
+    ]
+}
