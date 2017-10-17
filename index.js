@@ -16,4 +16,11 @@ $(function() {
         var moduleId = e.target.getAttribute('module');
         $('div.module#' + moduleId).toggleClass('selectedModule');
     });
+
+    $('.module').on('click', function(e)){
+        e.stopPropagation();
+        var informationText = //get text here
+        $('InfoPanelLink').hide();
+        $('#InfoPanelInformation').text(informationText);
+    }
 });
