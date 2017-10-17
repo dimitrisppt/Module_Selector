@@ -11,12 +11,30 @@ var template = '{{#moduleList}}\
 </div>\
 {{/moduleList}}';
 
-
+isManagementCourse = false;
 
 $(function() {
     $('#coreModuleList').append(Mustache.render(template, moduleData.core));
     $('#optionalModuleListTerm1').html(Mustache.render(template, moduleData.term1));
     $('#optionalModuleListTerm2').html(Mustache.render(template, moduleData.term2));
+
+    $('.courseSel#Cs').on('click', function(e) {
+        $('.module.selectedModuleManagement').hide();
+        this.className += ' active';
+        $('.courseSel#CsM').removeClass('active');
+        window.isManagementCourse = false;
+        $('div.module').removeClass('selectedModule');
+        $('progress').attr('value', 0);
+    });
+
+    $('.courseSel#CsM').on('click', function(e) {
+        $('.module.selectedModuleManagement').show();
+        this.className += ' active';
+        $('.courseSel#Cs').removeClass('active');
+        window.isManagementCourse = true;
+        $('div.module').removeClass('selectedModule');
+        $('progress').attr('value', 0);
+    });
 
     $('.selectModuleButton').on('click', function(e) {
         e.stopPropagation();
@@ -31,9 +49,19 @@ $(function() {
             }
         }
         for (stream of streams) {
-            console.log(stream);
+            var value = $('#progress' + stream).attr('value') - 0;
             if ($('div.module#' + moduleId).hasClass('selectedModule')) {
-                $('#progress' + stream).attr('value', 50);
+                value += isManagementCourse? 100/4 : 100/6;
+                $('#progress' + stream).attr('value', value);
+            } else {
+                value -= isManagementCourse? 100/4: 100/6;
+                $('#progress' + stream).attr('value', value);
+            }
+
+            if ($('#progress' + stream).attr('value') >= 100) {
+                $('#' + stream).addClass('active');
+            } else {
+                $('#' + stream).removeClass('active');
             }
         }
     });
@@ -60,6 +88,7 @@ $(function() {
             moduleArray = window.moduleData.term2.moduleList;
         }
         
+        $('#moduleInfoPlaceholder').hide();
 
         for(module of moduleArray){
             if(moduleId === module.id){
@@ -68,9 +97,6 @@ $(function() {
                 var lecturer = module.lecturer;
                 var assessment = module.assessment;
                 var desc = module.description;
-
-                $('#InfoPanelLink').hide();
-                $('#InfoPanelInformation').hide();//*/
                 $('#moduleId').html('<b>Module ID: </b>' + moduleId + "<br>");
                 $('#moduleTitle').html('<b>Module Title: </b>' + title + "<br>");
                 $('#moduleCredits').html('<b>Module Credits: </b>' + credits + "<br>");
