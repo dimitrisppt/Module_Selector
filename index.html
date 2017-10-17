@@ -8,19 +8,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <link rel="stylesheet" type="text/css" href="./main.css">
-    
+
     <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="./mustache.min.js"></script>
     <script type="text/javascript" src="./modules.js"></script>
     <script type="text/javascript" src="./index.js"></script>
-    
+
 </head>
 
 <body>
 <div id="MainContainer">
     <div id="Header">
-    <h1 id="HeaderTitle">Example Domain</h1>
+        
+        <h1 id="HeaderTitle">Example Domain</h1>
+        
+        <div id="coursesSelection">
+            <a href="#cs">Bsc Computer Science</a>
+            <a href="#csM">Bsc Computer Science with Management</a>
+        </div>
+
+        <div id="stream">
+            
+                
+
+                <a href="">Internet Systems
+                    <div class="progressbar">
+                        <progress id="progressIS" value="0" max="100">
+                        </progress>
+                    </div>
+                </a>
+
+                <a href="">Software Engineering
+                    <div class="progressbar">
+                        <progress id="progressSE" value="0" max="100">
+                        </progress>
+                    </div>
+                </a>
+
+                <a href="">Artificial Intelligence
+                    <div class="progressbar">
+                        <progress id="progressAI" value="0" max="100">
+                        </progress>
+                    </div>
+                </a>
+
+                <a href="">Performance Critical Computing 
+                    <div class="progressbar">
+                        <progress id="progressPCC" value="0" max="100">
+                        </progress>
+                    </div>
+                </a>
+            
+
+        </div>
     </div>
+    
     <div id="Content">
         <div id="SelectionPanel">
             
@@ -32,12 +74,17 @@
                 </div>
             </div>
             
-            <div id="Optional">
+            <div class="optional">
                 <div class="sectionTitle">
-                    <p>Optional</p>
+                    <p>Term 1</p>
                 </div>
-                <div id="optionalModuleList">
+                <div id="optionalModuleListTerm1" class="optionalModuleList"></div>
+            </div>
+            <div class="optional">
+                <div class="sectionTitle">
+                    <p>Term 2</p>
                 </div>
+                <div id="optionalModuleListTerm2" class="optionalModuleList"></div>
             </div>
         
         </div>
@@ -53,4 +100,5 @@
 </div>
 
 
-</body></html>
+</body>
+</html>
