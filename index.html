@@ -19,50 +19,33 @@
 <body>
 <div id="MainContainer">
     <div id="Header">
-        
         <h1 id="HeaderTitle">Example Domain</h1>
         
         <div id="coursesSelection">
-            <a href="#cs" onclick=" 
-                $('.module.selectedModuleManagement').hide();"
-            >Bsc Computer Science</a>
-            
-            <a href="#csM" onclick="
-                $('.module.selectedModuleManagement').show();"
-                                    
-            >Bsc Computer Science with Management</a>
+            <div class="courseSel active" id="Cs">Bsc Computer Science</div>
+            <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
         </div>
 
         <div id="stream">
-            
-                
-                <div class="Specifications" id="InSy">Internet Systems
-                   
-                        <progress id="progressIS" value="0" max="100">
-                        </progress>
-                   
-                </div>
+            <div class="Specifications" id="InSy">Internet Systems
+                <progress id="progressInSy" value="0" max="100">
+                </progress>
+            </div>
 
-                <div class="Specifications" id="SEG" href="">Software Engineering
-                    
-                        <progress id="progressSE" value="0" max="100">
-                        </progress>
-                    
-                </div>
+            <div class="Specifications" id="SEG" href="">Software Engineering
+                <progress id="progressSEG" value="0" max="100">
+                </progress>
+            </div>
 
-                <div class="Specifications" id="AI" href="">Artificial Intelligence
-                    
-                        <progress id="progressAI" value="0" max="100">
-                        </progress>
-                   
-                </div>
+            <div class="Specifications" id="AI" href="">Artificial Intelligence
+                <progress id="progressAI" value="0" max="100">
+                </progress>
+            </div>
 
-                <div class="Specifications" id="PCC" href="">Performance Critical Computing 
-                        <progress id="progressPCC" value="0" max="100">
-                        </progress>
-                </div>
-            
-
+            <div class="Specifications" id="PCC" href="">Performance Critical Computing 
+                <progress id="progressPCC" value="0" max="100">
+                </progress>
+            </div>
         </div>
     </div>
     
@@ -93,15 +76,13 @@
         </div>
         
         <div id="InfoPanel"> 
+            <p id = "moduleInfoPlaceholder">Click on a module for more info...</p>
             <p id = "moduleId"></p>
             <p id = "moduleTitle"></p>
             <p id = "moduleCredits"></p>
             <p id = "moduleLecturer"></p>
             <p id = "moduleAssessment"></p>
             <p id = "moduleDescription"></p>
-            <p id = "InfoPanelInformation">This domain is established to be used for illustrative examples in documents. You may use this
-                domain in examples without prior coordination or asking for permission.</p>
-            <p id = "InfoPanelLink"><a href="http://www.iana.org/domains/example">More information...</a></p>
         </div>
     
     </div>
