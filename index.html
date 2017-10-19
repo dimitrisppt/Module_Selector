@@ -19,16 +19,14 @@
 <body>
 <div id="MainContainer">
     <div id="Header">
-        
         <h1 id="HeaderTitle">Example Domain</h1>
         
         <div id="coursesSelection">
-            <a href="#cs">Bsc Computer Science</a>
-            <a href="#csM">Bsc Computer Science with Management</a>
+            <div class="courseSel active" id="Cs">Bsc Computer Science</div>
+            <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
         </div>
 
         <div id="stream">
-            
                 
                 <div class="Specifications" id="InSy">Internet Systems
                         <br/>
@@ -57,7 +55,6 @@
                         </progress>
                 </div>
             
-
         </div>
     </div>
     
@@ -88,9 +85,19 @@
         </div>
         
         <div id="InfoPanel"> 
+
             <p>This domain is established to be used for illustrative examples in documents. You may use this
                 domain in examples without prior coordination or asking for permission.</p>
             <p><a href="http://www.iana.org/domains/example">More information...</a></p>
+
+            <p id = "moduleInfoPlaceholder">Click on a module for more info...</p>
+            <p id = "moduleId"></p>
+            <p id = "moduleTitle"></p>
+            <p id = "moduleCredits"></p>
+            <p id = "moduleLecturer"></p>
+            <p id = "moduleAssessment"></p>
+            <p id = "moduleDescription"></p>
+
         </div>
     
     </div>
