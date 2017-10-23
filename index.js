@@ -11,7 +11,10 @@ var template = '{{#moduleList}}\
 </div>\
 {{/moduleList}}';
 
-isManagementCourse = false;
+window.currentState = {
+    isManagementCourse: false,
+    currentStream: ''
+};
 
 $(function() {
     $('#coreModuleList').append(Mustache.render(template, moduleData.core));
@@ -22,7 +25,7 @@ $(function() {
         $('.module.selectedModuleManagement').hide();
         this.className += ' active';
         $('.courseSel#CsM').removeClass('active');
-        window.isManagementCourse = false;
+        currentState.isManagementCourse = false;
         $('div.module').removeClass('selectedModule');
         $('progress').attr('value', 0);
     });
@@ -31,7 +34,7 @@ $(function() {
         $('.module.selectedModuleManagement').show();
         this.className += ' active';
         $('.courseSel#Cs').removeClass('active');
-        window.isManagementCourse = true;
+        currentState.isManagementCourse = true;
         $('div.module').removeClass('selectedModule');
         $('progress').attr('value', 0);
     });
@@ -51,10 +54,10 @@ $(function() {
         for (stream of streams) {
             var value = $('#progress' + stream).attr('value') - 0;
             if ($('div.module#' + moduleId).hasClass('selectedModule')) {
-                value += isManagementCourse? 100/4 : 100/6;
+                value += currentState.isManagementCourse? 100/4 : 100/6;
                 $('#progress' + stream).attr('value', value);
             } else {
-                value -= isManagementCourse? 100/4: 100/6;
+                value -= currentState.isManagementCourse? 100/4: 100/6;
                 $('#progress' + stream).attr('value', value);
             }
 
@@ -67,20 +70,22 @@ $(function() {
     });
 
     $(".Specifications").click(function(e) {
-    	//window.alert("Test");
-    	var suggModules = window.streamData[e.currentTarget.getAttribute('id')];
-    	console.log(suggModules);
-    	
-
+        var stream = e.currentTarget.getAttribute('id');
+    	var suggModules = window.streamData[stream];
+        var suggSelector = '';
 
     	for (moduleId of suggModules) { 
-  
-    		$('div.module#' + moduleId).find("p").css("color", "red");
-    		
+            suggSelector += ('#' + moduleId + ',');
     	}
+        suggSelector = suggSelector.slice(0, -1);
+        $(suggSelector).map(function(idx, el) {
+            moduleMarkSuggested(el, currentState.currentStream !== stream);
+        });
+        $('div.module').not(suggSelector).map(function(idx, el) {
+            moduleMarkSuggested(el, false);
+        });
 
-
- 
+        currentState.currentStream = currentState.currentStream === stream? '' : stream;
     });
 
     $('.module').on('click', function(e){
@@ -116,3 +121,13 @@ $(function() {
     });
 
 });
+
+function moduleMarkSuggested (moduleDiv, isSuggested) {
+    if (isSuggested) {
+        $(moduleDiv).css('background-color', 'red');
+        //TODO: mark module as suggested
+    } else {
+        $(moduleDiv).css('background-color', 'white');
+        //TODO: mark as NOT suggested
+    }
+}
