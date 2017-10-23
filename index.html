@@ -1,109 +1,92 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Module Selector</title>
+    <head>
+        <title>Module Selector</title>
 
-    <meta charset="utf-8">
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" type="text/css" href="./main.css">
+        <meta charset="utf-8">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="./mustache.min.js"></script>
-    <script type="text/javascript" src="./modules.js"></script>
-    <script type="text/javascript" src="./index.js"></script>
+        <link rel="stylesheet" type="text/css" href="./main.css">
 
-</head>
+        <script type="text/javascript" src="./jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="./mustache.min.js"></script>
+        <script type="text/javascript" src="./modules.js"></script>
+        <script type="text/javascript" src="./index.js"></script>
+    </head>
 
-<body>
-<div id="MainContainer">
-    <div id="Header">
-        <h1 id="HeaderTitle">Example Domain</h1>
-        
-        <div id="coursesSelection">
-            <div class="courseSel active" id="Cs">Bsc Computer Science</div>
-            <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
-        </div>
+    <body>
+        <div id="MainContainer">
+            <div id="Header">
+                <h1 id="HeaderTitle">Example Domain</h1>
 
-        <div id="stream">
-                
-                <div class="Specifications" id="InSy">Internet Systems
+                <div id="coursesSelection">
+                    <div class="courseSel active" id="Cs">Bsc Computer Science</div>
+                    <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
+                </div>
+
+                <div id="stream">
+                    <div class="Specifications" id="InSy">Internet Systems
                         <br/>
                         <progress id="progressIS" value="0" max="100">
                         </progress>
-                   
-                </div>
+                    </div>
 
-                <div class="Specifications" id="SEG" href="">Software Engineering
+                    <div class="Specifications" id="SEG" href="">Software Engineering
                         <br/>
                         <progress id="progressSE" value="0" max="100">
                         </progress>
-                    
-                </div>
+                    </div>
 
-                <div class="Specifications" id="AI" href="">Artificial Intelligence
+                    <div class="Specifications" id="AI" href="">Artificial Intelligence
                         <br/>   
                         <progress id="progressAI" value="0" max="100">
                         </progress>
-                   
-                </div>
+                    </div>
 
-                <div class="Specifications" id="PCC" href="">Performance Critical Computing 
+                    <div class="Specifications" id="PCC" href="">Performance Critical Computing 
                         <br/>
                         <progress id="progressPCC" value="0" max="100">
                         </progress>
-                </div>
-            
-        </div>
-    </div>
-    
-    <div id="Content">
-        <div id="SelectionPanel">
-            
-            <div id="Compulsory">
-                <div class="sectionTitle">
-                    <p>Compulsory</p>
-                </div>
-                <div id="coreModuleList">
+                    </div>
                 </div>
             </div>
-            
-            <div class="optional">
-                <div class="sectionTitle">
-                    <p>Term 1</p>
+
+            <div id="Content">
+                <div id="SelectionPanel">
+                    <div id="Compulsory">
+                        <div class="sectionTitle">
+                            <p>Compulsory</p>
+                        </div>
+                        <div id="coreModuleList">
+                        </div>
+                    </div>
+
+                    <div class="optional">
+                        <div class="sectionTitle">
+                            <p>Term 1</p>
+                        </div>
+                        <div id="optionalModuleListTerm1" class="optionalModuleList"></div>
+                    </div>
+
+                    <div class="optional">
+                        <div class="sectionTitle">
+                            <p>Term 2</p>
+                        </div>
+                        <div id="optionalModuleListTerm2" class="optionalModuleList"></div>
+                    </div>
                 </div>
-                <div id="optionalModuleListTerm1" class="optionalModuleList"></div>
-            </div>
-            <div class="optional">
-                <div class="sectionTitle">
-                    <p>Term 2</p>
+
+                <div id="InfoPanel"> 
+                    <p id = "moduleInfoPlaceholder">Click on a module for more info...</p>
+                    <p id = "moduleId"></p>
+                    <p id = "moduleTitle"></p>
+                    <p id = "moduleCredits"></p>
+                    <p id = "moduleLecturer"></p>
+                    <p id = "moduleAssessment"></p>
+                    <p id = "moduleDescription"></p>
                 </div>
-                <div id="optionalModuleListTerm2" class="optionalModuleList"></div>
             </div>
-        
         </div>
-        
-        <div id="InfoPanel"> 
-
-            <p>This domain is established to be used for illustrative examples in documents. You may use this
-                domain in examples without prior coordination or asking for permission.</p>
-            <p><a href="http://www.iana.org/domains/example">More information...</a></p>
-
-            <p id = "moduleInfoPlaceholder">Click on a module for more info...</p>
-            <p id = "moduleId"></p>
-            <p id = "moduleTitle"></p>
-            <p id = "moduleCredits"></p>
-            <p id = "moduleLecturer"></p>
-            <p id = "moduleAssessment"></p>
-            <p id = "moduleDescription"></p>
-
-        </div>
-    
-    </div>
-
-</div>
-
-
-</body>
+    </body>
 </html>
