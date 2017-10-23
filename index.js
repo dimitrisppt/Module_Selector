@@ -1,5 +1,5 @@
 var template = '{{#moduleList}}\
-<div class="module {{#isCore}}selectedModule{{#isManagement}}Management{{/isManagement}}{{/isCore}}" id="{{id}}" {{#isManagement}}style="display: none{{/isManagement}}">\
+<div class="module {{#isCore}}selectedModule coreModule {{#isManagement}}management{{/isManagement}}{{/isCore}}" id="{{id}}" {{#isManagement}}style="display: none{{/isManagement}}">\
     <div class="selectedModuleTitle">\
         <p>{{title}}</p>\
     </div>\
@@ -11,7 +11,10 @@ var template = '{{#moduleList}}\
 </div>\
 {{/moduleList}}';
 
-isManagementCourse = false;
+window.currentState = {
+    isManagementCourse: false,
+    currentStream: ''
+};
 
 $(function() {
     $('#coreModuleList').append(Mustache.render(template, moduleData.core));
@@ -19,20 +22,20 @@ $(function() {
     $('#optionalModuleListTerm2').html(Mustache.render(template, moduleData.term2));
 
     $('.courseSel#Cs').on('click', function(e) {
-        $('.module.selectedModuleManagement').hide();
+        $('.module.management').hide();
         this.className += ' active';
         $('.courseSel#CsM').removeClass('active');
-        window.isManagementCourse = false;
-        $('div.module').removeClass('selectedModule');
+        currentState.isManagementCourse = false;
+        $('div.module:not(.coreModule)').removeClass('selectedModule');
         $('progress').attr('value', 0);
     });
 
     $('.courseSel#CsM').on('click', function(e) {
-        $('.module.selectedModuleManagement').show();
+        $('.module.management').show();
         this.className += ' active';
         $('.courseSel#Cs').removeClass('active');
-        window.isManagementCourse = true;
-        $('div.module').removeClass('selectedModule');
+        currentState.isManagementCourse = true;
+        $('div.module:not(.coreModule)').removeClass('selectedModule');
         $('progress').attr('value', 0);
     });
 
@@ -51,29 +54,46 @@ $(function() {
         for (stream of streams) {
             var value = $('#progress' + stream).attr('value') - 0;
             if ($('div.module#' + moduleId).hasClass('selectedModule')) {
-                value += isManagementCourse? 100/4 : 100/6;
+                value += currentState.isManagementCourse? 100/4 : 100/6;
                 $('#progress' + stream).attr('value', value);
             } else {
-                value -= isManagementCourse? 100/4: 100/6;
+                value -= currentState.isManagementCourse? 100/4: 100/6;
                 $('#progress' + stream).attr('value', value);
             }
 
             if ($('#progress' + stream).attr('value') >= 100) {
-                $('#' + stream).addClass('active');
+                $('#' + stream).find('progress').addClass('active');
             } else {
-                $('#' + stream).removeClass('active');
+                $('#' + stream).find('progress').removeClass('active');
             }
         }
     });
 
     $(".Specifications").click(function(e) {
-    	//window.alert("Test");
-    	var suggModules = window.streamData[e.currentTarget.getAttribute('id')];
-    	console.log(suggModules);
-    	$('div.module#' + suggModules).toggleClass('selectedModule');
+        var stream = e.currentTarget.getAttribute('id');
+    	var suggModules = window.streamData[stream];
+        var suggSelector = '';
 
-    	//TODO 
-    })
+    	for (moduleId of suggModules) { 
+            suggSelector += ('#' + moduleId + ',');
+    	}
+        suggSelector = suggSelector.slice(0, -1);
+        $(suggSelector).map(function(idx, el) {
+            moduleMarkSuggested(el, currentState.currentStream !== stream);
+        });
+        $('div.module:not(.coreModule)').not(suggSelector).map(function(idx, el) {
+            moduleMarkSuggested(el, false);
+        });
+
+        if (currentState.currentStream === stream) {
+            $(this).removeClass('active');
+            currentState.currentStream = '';
+        } else {
+            $('.Specifications').removeClass('active');
+            $(this).addClass('active');
+            currentState.currentStream = stream;
+        }
+    });
 
     $('.module').on('click', function(e){
         e.stopPropagation();
@@ -108,3 +128,13 @@ $(function() {
     });
 
 });
+
+function moduleMarkSuggested (moduleDiv, isSuggested) {
+    if (isSuggested) {
+        $(moduleDiv).css('color', 'red');
+        //TODO: mark module as suggested
+    } else {
+        $(moduleDiv).css('color', 'black');
+        //TODO: mark as NOT suggested
+    }
+}
