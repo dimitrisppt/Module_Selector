@@ -88,8 +88,10 @@ max-height: 150%;
 .sectionTitle > p {
     padding: 0.5em 2em 0.5em 2em;
     font-weight: bold;
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
+    /*-webkit-margin-before: 0px;*/
+    /*-webkit-margin-after: 0px;*/
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .module {
@@ -121,15 +123,6 @@ max-height: 150%;
 }
 
 .module.selectedModule {
-    flex: 1;
-    width: 98%;
-    background-color: lightgreen;
-    border-radius: 12px;
-    margin: 4px 0px ;
-
-}
-
-.module.selectedModuleManagement {
     flex: 1;
     width: 98%;
     background-color: lightgreen;
@@ -180,7 +173,7 @@ div.module {
 }
 
 /* Style the links inside the navigation bar */
-#coursesSelection a {
+#coursesSelection div {
     float: left;
     display: block;
     color: #f2f2f2;
@@ -191,13 +184,13 @@ div.module {
 }
 
 /* Change the color of links on hover */
-#coursesSelection a:hover {
+#coursesSelection div:hover {
     background-color: #ddd;
     color: black;
 }
 
 /* Add a color to the active/current link */
-#coursesSelection a.active {
+#coursesSelection div.active {
     background-color: #4CAF50;
     color: white;
 }
@@ -233,12 +226,10 @@ div.module {
     color: white;
 }
 
+progress.active::-moz-progress-bar {
+    background-color: lightblue;
+}
 
-
-
-
-
-
-
-
-
+progress,active::-webkit-progress-value {
+    background-color: lightblue;
+}
