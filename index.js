@@ -169,10 +169,10 @@ $(function() {
 
 function moduleMarkSuggested (moduleDiv, isSuggested) {
     if (isSuggested) {
-        $(moduleDiv).css('color', 'red');
+        $(moduleDiv).find('p').append('<span style="color: blue";> (Suggested) </span>');
         //TODO: mark module as suggested
     } else {
-        $(moduleDiv).css('color', 'black');
+        $(moduleDiv).find('span').remove();
         //TODO: mark as NOT suggested
     }
 }
