@@ -13,7 +13,9 @@ var template = '{{#moduleList}}\
 
 window.currentState = {
     isManagementCourse: false,
-    currentStream: ''
+    currentStream: '',
+    selectedTerm1: 0,
+    selectedTerm2: 0
 };
 
 $(function() {
@@ -26,8 +28,9 @@ $(function() {
         this.className += ' active';
         $('.courseSel#CsM').removeClass('active');
         currentState.isManagementCourse = false;
-        $('div.module:not(.coreModule)').removeClass('selectedModule');
+        clearSelectedModules();
         $('progress').attr('value', 0);
+        $('.titleInfo').text(' (Select 3)');
     });
 
     $('.courseSel#CsM').on('click', function(e) {
@@ -35,15 +38,50 @@ $(function() {
         this.className += ' active';
         $('.courseSel#Cs').removeClass('active');
         currentState.isManagementCourse = true;
-        $('div.module:not(.coreModule)').removeClass('selectedModule');
+        clearSelectedModules();
         $('progress').attr('value', 0);
+        $('.titleInfo').text(' (Select 2)');
     });
 
     $('.selectModuleButton').on('click', function(e) {
         e.stopPropagation();
         var moduleId = e.target.getAttribute('module');
-        var streams = [];
+        var term = $(e.target).parents('.optionalModuleList').attr('id');
+        var max = currentState.isManagementCourse? 2 : 3;
+        var togglingOn = !$('div.module#' + moduleId).hasClass('selectedModule');
+        var check = 0;
+        if (!term) {
+            return; //it's a core module, somehow
+        } else if (term == 'optionalModuleListTerm1') {
+            if (currentState.selectedTerm1 >= max && togglingOn) return;
+        } else {
+            if (currentState.selectedTerm2 >= max && togglingOn) return;
+        }
         $('div.module#' + moduleId).toggleClass('selectedModule');
+        if (togglingOn) {
+            if (term == 'optionalModuleListTerm1') {
+                check = ++(currentState.selectedTerm1);
+            } else {
+                check = ++(currentState.selectedTerm2);
+            }
+            if (check >= max) {
+                $('#' + term)
+                    .find('.module')
+                    .not('.selectedModule')
+                    .find('button')
+                    .prop('disabled', true);
+            }
+        } else {
+            if (term == 'optionalModuleListTerm1') {
+                check = --(currentState.selectedTerm1);
+            } else {
+                check = --(currentState.selectedTerm2);
+            }
+            if (check < max) {
+                $('#' + term).find('button').prop('disabled', false);
+            }
+        }
+        var streams = [];
         for (stream in streamData) {
             for (mod of streamData[stream]) {
                 if (mod == moduleId) {
@@ -137,4 +175,11 @@ function moduleMarkSuggested (moduleDiv, isSuggested) {
         $(moduleDiv).css('color', 'black');
         //TODO: mark as NOT suggested
     }
+}
+
+function clearSelectedModules() {
+    currentState.selectedTerm1 = 0;
+    currentState.selectedTerm2 = 0;
+    $('.optional').find('button').prop('disabled', false);
+    $('div.module:not(.coreModule)').removeClass('selectedModule');
 }
