@@ -30,6 +30,7 @@ $(function() {
         currentState.isManagementCourse = false;
         clearSelectedModules();
         $('progress').attr('value', 0);
+        $('.titleInfo').text(' (Select 3)');
     });
 
     $('.courseSel#CsM').on('click', function(e) {
@@ -39,6 +40,7 @@ $(function() {
         currentState.isManagementCourse = true;
         clearSelectedModules();
         $('progress').attr('value', 0);
+        $('.titleInfo').text(' (Select 2)');
     });
 
     $('.selectModuleButton').on('click', function(e) {
@@ -178,6 +180,6 @@ function moduleMarkSuggested (moduleDiv, isSuggested) {
 function clearSelectedModules() {
     currentState.selectedTerm1 = 0;
     currentState.selectedTerm2 = 0;
-    $('button').prop('disabled', false);
+    $('.optional').find('button').prop('disabled', false);
     $('div.module:not(.coreModule)').removeClass('selectedModule');
 }
