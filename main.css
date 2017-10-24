@@ -10,6 +10,9 @@ max-height: 150%;
 
 #HeaderTitle {
     margin: 10px 0px 10px 10px;
+    color: #4abb2f;
+    margin-bottom: 10px;
+
     
 }
 
@@ -22,17 +25,33 @@ max-height: 150%;
     
 }
 
-#Header {
+#HeaderContainer {
     
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items:stretch;
+    justify-content: flex-start;
     background-color: #333C3E;
     width: 100%;
     margin-right: 0 auto;
 
 }
 
+#Header {
+    flex: 6;
+    background-color: #333C3E;
+    margin: 0 auto;
+}
+
+#HeaderImage {
+    flex: 1;
+    height: 100%;
+    margin-top: 10px
+}
+
 #Content {
-    flex: 10;
+    flex: 5;
     display: flex;
     flex-direction: row;
     justify-content:flex-start;
@@ -51,7 +70,7 @@ max-height: 150%;
 #InfoPanel {
     flex: 2.5;
     width: 70%;
-    background-color: grey;
+    background-color: #E5E2DD;
     float: right;
     margin: 10px 0px 0px 10px;
     padding: 10px;
@@ -63,7 +82,7 @@ max-height: 150%;
     min-height: 120px;
     max-height: 280px;
     border: solid grey 3px;
-    background-color: green;
+    background-color: #E5E2DD;
     margin-top: 10px;
     text-align: center;
     
@@ -73,7 +92,7 @@ max-height: 150%;
     
     min-height: 200px;
     max-height: 400px;
-    background-color: blue;
+    background-color: #E5E2DD;
     border: solid grey 3px;
     margin-top: 10px;
     text-align: center;
@@ -81,8 +100,13 @@ max-height: 150%;
 }
 
 .sectionTitle {
-    background-color: lightgrey;
+    background-color: #333C3E;
     height: 2em;
+    color: #FFF;
+    font-family: 'BureauGrotesqueThreeSeven', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 80%;
 }
 
 .sectionTitle > p {
@@ -125,7 +149,7 @@ max-height: 150%;
 .module.selectedModule {
     flex: 1;
     width: 98%;
-    background-color: lightgreen;
+    background-color: #4abb2f;
     border-radius: 12px;
     margin: 4px 0px ;
 
@@ -178,19 +202,20 @@ div.module {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 0px 16px 16px 16px;
+    padding: 5px 16px 16px 16px;
     text-decoration: none;
     font-size: 17px;
+    border-top: 1px solid #FFF;
 }
 
 /* Change the color of links on hover */
 #coursesSelection div:hover {
-    color: #f3e101;
+    color: #4abb2f;
 }
 
 /* Add a color to the active/current link */
 #coursesSelection div.active {
-    color: #f3e101;
+    color: #4abb2f;
 }
 
 
@@ -216,7 +241,6 @@ div.module {
 
 .specificationTitle {
     font-family: 'BureauGrotesqueThreeSeven', Arial, Helvetica, sans-serif;
-    font-weight: ;
     text-transform: uppercase;
     color: '#FFF';
     text-decoration: none;

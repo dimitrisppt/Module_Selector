@@ -17,39 +17,42 @@
 
     <body>
         <div id="MainContainer">
-            <div id="Header">
-                <h1 id="HeaderTitle">Example Domain</h1>
+            <div id="HeaderContainer">
+                <div id="Header">
+                    <h1 id="HeaderTitle"><span style="color: #FFF">KCL</span> Module Selector</h1>
+                    <div id="coursesSelection">
+                        <div class="courseSel active" id="Cs">Bsc Computer Science</div>
+                        <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
+                    </div>
 
-                <div id="coursesSelection">
-                    <div class="courseSel active" id="Cs">Bsc Computer Science</div>
-                    <div class="courseSel" id="CsM">Bsc Computer Science with Management</div>
+                    <div id="stream">
+                        <div class="Specifications" id="SEG" href=""> <strong class="specificationTitle">Software Engineering</strong>
+                            <br/>
+                            <progress id="progressSEG" value="0" max="100">
+                            </progress>
+                        </div>
+
+                        <div class="Specifications" id="InSy"><strong class="specificationTitle">Internet <br/> Systems</strong>
+                            <br/>
+                            <progress id="progressInSy" value="0" max="100">
+                            </progress>
+                        </div>
+
+                        <div class="Specifications" id="AI" href=""><strong class="specificationTitle">Artificial Intelligence</strong>
+                            <br/>   
+                            <progress id="progressAI" value="0" max="100">
+                            </progress>
+                        </div>
+
+                        <div class="Specifications" id="PCC" href=""><strong class="specificationTitle">Performance Critical Computing </strong>
+                            <br/>
+                            <progress id="progressPCC" value="0" max="100">
+                            </progress>
+                        </div>
+                    </div>
                 </div>
-
-                <div id="stream">
-                    
-                    <div class="Specifications" id="SEG" href=""> <strong class="specificationTitle">Software Engineering</strong>
-                        <br/>
-                        <progress id="progressSEG" value="0" max="100">
-                        </progress>
-                    </div>
-                    
-                    <div class="Specifications" id="InSy"><strong class="specificationTitle">Internet <br/> Systems</strong>
-                        <br/>
-                        <progress id="progressInSy" value="0" max="100">
-                        </progress>
-                    </div>
-
-                    <div class="Specifications" id="AI" href=""><strong class="specificationTitle">Artificial Intelligence</strong>
-                        <br/>   
-                        <progress id="progressAI" value="0" max="100">
-                        </progress>
-                    </div>
-                    
-                    <div class="Specifications" id="PCC" href=""><strong class="specificationTitle">Performance Critical Computing </strong>
-                        <br/>
-                        <progress id="progressPCC" value="0" max="100">
-                        </progress>
-                    </div>
+                <div id="HeaderImage">
+                    <img src="img/kcl-crest-04.png" height="90%">
                 </div>
             </div>
 
