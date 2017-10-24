@@ -25,7 +25,7 @@ max-height: 150%;
 #Header {
     
     flex: 1;
-    background-color: blanchedalmond;
+    background-color: #333C3E;
     width: 100%;
     margin-right: 0 auto;
 
@@ -168,7 +168,7 @@ div.module {
 
 /* Add a black background color to the top navigation */
 #coursesSelection {
-    background-color: #333;
+    background-color: #333C3E;
     overflow: hidden;
 }
 
@@ -178,29 +178,28 @@ div.module {
     display: block;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 0px 16px 16px 16px;
     text-decoration: none;
     font-size: 17px;
 }
 
 /* Change the color of links on hover */
 #coursesSelection div:hover {
-    background-color: #ddd;
-    color: black;
+    color: #f3e101;
 }
 
 /* Add a color to the active/current link */
 #coursesSelection div.active {
-    background-color: #4CAF50;
-    color: white;
+    color: #f3e101;
 }
 
 
 
 /* Add a black background color to the top navigation */
 #stream {
-    background-color: #444;
+    background-color: #333C3E;
     overflow: hidden;
+    margin-left: 17px;
 }
 
 /* Style the links inside the navigation bar */
@@ -209,9 +208,23 @@ div.module {
     display: block;
     color: #f2f2f2;
     text-align: left;
-    padding: 14px 16px;
+    padding: 0px 16px 10px 16px;
     text-decoration: none;
     font-size: 15px;
+    border-left: 1px solid #FFF;
+}
+
+.specificationTitle {
+    font-family: 'BureauGrotesqueThreeSeven', Arial, Helvetica, sans-serif;
+    font-weight: ;
+    text-transform: uppercase;
+    color: '#FFF';
+    text-decoration: none;
+    font-size: 85%;
+    width: 150px;
+    height: 18px;
+    display: block;
+
 }
 
 /* Change the color of links on hover */
